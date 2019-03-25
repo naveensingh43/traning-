@@ -100,3 +100,80 @@
   100  git checkout master
   101  ls
   102  history > Git_History
+  103  git commit -m "Git History"
+  104  git add . 
+  105  git commit -m "Git History"
+  106  git push origin master
+  107  ls
+  108  git show HEAD
+  109  git show HEAD~1
+  110  git log 
+  111  git diff  ba82c1d..
+  112  git diff  ba82c1d..53bc35e
+  113  git show HEAD
+  114  git show HEAD~1
+  115  git show HEAD~2
+  116  git show HEAD~3
+  117  git show HEAD~4
+  118  ls
+  119  git branch 
+  120  git merge -b UAT-Features
+  121  git merge UAT-Features -m "Merge Branch UAT"
+  122  git branch 
+  123  ls
+  124  git log 
+  125  git show HEAD~1
+  126  git commit -m "Merge Branch"
+  127  git push origin master
+  128  git show HEAD~1
+  129  git show HEAD
+  130  git show HEADls
+  131  git log 
+  132  git diff 1988099..ba82c1d407
+  133  ls
+  134  git log 
+  135  git tag myapp-v1-02-2019
+  136  git tag 
+  137  ls -a 
+  138  cd .git/
+  139  ls
+  140  cd refs/
+  141  ls
+  142  cd tags/
+  143  ls
+  144  file myapp-v1-02-2019 
+  145  cat myapp-v1-02-2019 
+  146  git log 
+  147  ls
+  148  git push --tags
+  149  ls
+  150  cd ..
+  151  cd 
+  152  ls
+  153  cd jenkins-adv-acc-2/
+  154  ls
+  155  rm -rf test/test01 test/test02
+  156  git add . 
+  157  git commit -m "Removed test01 & 02"
+  158  git push origin master
+  159  ls
+  160  rm -rf test/myfile06 
+  161  git commit -m "Removed myfile06"
+  162  git add . 
+  163  git commit -m "Removed myfile06"
+  164  git push origin master
+  165  ls
+  166  rm -rf Vagrantfile 
+  167  git add . 
+  168  git commit -m "Removed Vagrantfile"
+  169  git push origin master
+  170  ls
+  171  git tag myapp-v2-03-2019 
+  172  git push --tags
+  173  ls
+  174  rm -rf test 
+  175  git add . 
+  176  git commit -m "Removed Test"
+  177  git push origin master
+  178  ls
+  179  history > Git_History 
