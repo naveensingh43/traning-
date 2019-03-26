@@ -1,0 +1,14 @@
+node {
+   
+   git 'https://github.com/amitvashist7/jenkins-adv-acc-2.git'
+   
+   def project_path = "spring-boot-project/spring-boot-samples/spring-boot-sample-atmosphere"
+   
+   dir(project_path) {
+   
+   sh label: 'Clean', script: 'mvn clean'
+   sh label: 'Package', script: 'mvn package'
+   archive 'target/*.jar'
+    
+   }    
+}
