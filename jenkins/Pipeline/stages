@@ -1,0 +1,35 @@
+node {
+   
+   stage('Checkout Repo') {
+    git 'https://github.com/amitvashist7/jenkins-adv-acc-2.git'
+   }
+   
+   
+   
+   
+   def project_path = "spring-boot-project/spring-boot-samples/spring-boot-sample-atmosphere"
+   
+   dir(project_path) {
+   
+   stage('Clean Old Packages') {
+    sh label: 'Clean', script: 'mvn clean'
+   }
+   
+   
+          stage('Maven Compile') {
+    sh label: 'Clean', script: 'mvn compile'
+   }
+   
+       stage('Maven Test') {
+    sh label: 'Clean', script: 'mvn test'
+   }
+   
+        stage('Maven Package') {
+    sh label: 'Clean', script: 'mvn package'
+   }
+   
+    stage('Archive Artifacts') {
+   archive 'target/*.jar'
+    }
+   }    
+}
