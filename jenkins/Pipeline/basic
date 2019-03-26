@@ -1,0 +1,9 @@
+node {
+   
+   git 'https://github.com/amitvashist7/jenkins-adv-acc-2.git'
+   sh label: 'Clean', script: 'mvn clean -f spring-boot-project/spring-boot-samples/spring-boot-sample-atmosphere/pom.xml'
+   sh label: 'Package', script: 'mvn package -f spring-boot-project/spring-boot-samples/spring-boot-sample-atmosphere/pom.xml'
+   archive 'spring-boot-project/spring-boot-samples/spring-boot-sample-atmosphere/target/*.jar'
+    
+    
+}
