@@ -1,0 +1,15 @@
+    1  history 
+    2  apt-get update; apt-get install java git -y 
+    3  ping google.com
+    4  apt-get update; apt-get install java git -y 
+    5  apt-get install openjdk-8
+    6  apt-get install openjdk-8-jdk
+    7  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+    8  ls
+    9  cd jenkins/
+   10  ls
+   11  history > Jenkins_hist
+   12  cd ..
+   13  git add . 
+   14  git commit -m "Jenkins History"
+   15  git push origin master
