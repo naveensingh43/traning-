@@ -1,7 +1,9 @@
 my-test:
   image: myapache:v3
   ports: 
-    - '8090:80' 
+    - '8090:80'
+  volumes:
+    - ./code:/var/www/html 
 
 
 
