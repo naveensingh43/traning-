@@ -10,4 +10,4 @@ my-test:
 my-uat:
   image: myapache:v2
   ports: 
-    - '8091:80' 
+    - '8091:80'
