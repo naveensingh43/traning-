@@ -1,0 +1,59 @@
+    1  curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    2  chmod +x /usr/local/bin/docker-compose
+    3  docker-compose  version
+    4  ls
+    5  cd jenkins-adv-acc-2/
+    6  ls
+    7  cd docker/
+    8  ls
+    9  cd ..
+   10  ls
+   11  mkdir -p docker-compose
+   12  cd docker-compose/
+   13  ls
+   14  mkdir hello-world
+   15  ls
+   16  cd hello-world/
+   17  ls
+   18  vim docker-compose.yaml
+   19  docker images 
+   20  vim docker-compose.yaml
+   21  ls
+   22  docker-compose up -d
+   23  docker ps 
+   24  docker-compose  ps 
+   25  docker inspect hello-world_my-test_1
+   26  curl "172.17.0.2"
+   27  vim docker-compose.yaml 
+   28  docker-compose  ps 
+   29  vim docker-compose.yaml 
+   30  docker-compose  ps 
+   31  docker-compose  up -d 
+   32  docker-compose  ps 
+   33  ls
+   34  vim docker-compose.yaml 
+   35  docker-compose  up -d 
+   36  docker-compose  ps 
+   37  ls
+   38  cd ..
+   39  ls
+   40  cp -rf hello-world myapp
+   41  ls
+   42  cd myapp/
+   43  ls
+   44  vim docker-compose.yaml 
+   45  docker-compose  up -d 
+   46  docker ps 
+   47  docker-compose stop
+   48  docker-compose rm 
+   49  ls
+   50  cd ..
+   51  ls
+   52  cd hello-world/
+   53  ls
+   54  docker-compose stop
+   55  docker-compose rm
+   56  ls
+   57  cd ..
+   58  ls
+   59  history > history.txt

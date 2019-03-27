@@ -1,0 +1,11 @@
+my-test:
+  image: myapache:v3
+  ports: 
+    - '8093:80' 
+
+
+
+my-uat:
+  image: myapache:v2
+  ports: 
+    - '8094:80' 
