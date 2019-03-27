@@ -69,3 +69,42 @@
    67  cd jenkins-adv-acc-2/
    68  ls
    69  history > docker/opps.txt
+   70  git add . ; git commit -m "Dcoker Ops"; git push origin master
+   71  ls
+   72  docker ps 
+   73  ls
+   74  cd docker/
+   75  ls
+   76  mkdir dockerfile
+   77  cd dockerfile/
+   78  ls
+   79  mkdir apache
+   80  cd apache/
+   81  ls
+   82  vim Dockerfile
+   83  docker build -t myapache:v1 .
+   84  ls
+   85  docker images 
+   86  docker run -itd --name test-apach-03 -p 8091:80 myapache:v1 /bin/bash
+   87  docker ps 
+   88  curl localhost:8091
+   89  docker run -d --name test-apach-04 -p 8092:80 myapache:v1
+   90  curl localhost:8091
+   91  curl localhost:8092
+   92  history 
+   93  ls
+   94  vim index.html
+   95  ls
+   96  vim Dockerfile 
+   97  docker build -t myapache:v2 .
+   98  docker run -d --name test-apach-05 -p 8093:80 myapache:v2
+   99  ls
+  100  vim index.html 
+  101  docker build -t myapache:v3 .
+  102  docker run -d --name test-apach-06 -p 8094:80 myapache:v3
+  103  ls
+  104  cd ../
+  105  ls
+  106  cd ..
+  107  ls
+  108  history > opps.txt 
