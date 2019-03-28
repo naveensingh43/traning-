@@ -1,0 +1,11 @@
+---
+
+- hosts: web
+  sudo: yes
+  
+  tasks:
+  - name: Install Apache Packages
+    apt: name=apache2 state=present
+
+  - name: Start the Service
+    service: name=apache2 state=started
