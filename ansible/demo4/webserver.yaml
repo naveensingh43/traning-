@@ -1,0 +1,54 @@
+---
+- hosts: web
+  sudo: yes
+  vars_prompt:
+  - name: "name"
+    prompt: "What is your name ?"
+
+  vars: 
+    http_port: 80
+    doc_root: "/var/www/html"
+
+  tasks:
+  - name: Install Apache Packages on Ubuntu
+    apt: name=apache2 state=present
+    when: ansible_os_family == "Debian"
+
+  - name: Start the Service on Ubuntu
+    service: name=apache2 state=started
+    when: ansible_os_family == "Debian"
+
+  - name: Install Apache Packages on CentOS
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+
+  - name: Start the Service on CentOS
+    service: name=httpd state=started
+    when: ansible_os_family == "RedHat"
+
+  - debug: msg="This is name {{name}} what you supplied on prompt."
+
+  - name: Deploy Custom Apache Config. 
+    copy: src=templates/apache2.j2 dest=/etc/apache2/apache2.conf
+    notify: 
+      - Restart Apache
+
+  - name: Create Site Location
+    file: path={{doc_root}} state=directory
+
+  - name: Deploy Index File
+    copy: src=templates/index.html dest={{doc_root}}/index.html
+
+  - name: Deploy Site Info template. 
+    template: src=templates/info.j2 dest={{doc_root}}/info.html
+
+  handlers:
+  - name: Restart Apache
+    service: name=apache2 state=restarted
+
+   
+- hosts: web:db
+  sudo: yes
+  tasks:
+  - name: Stop the Firewall
+    shell: "ufw disable"
